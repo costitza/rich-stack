@@ -8,11 +8,11 @@ import { Button } from '@/components/ui/button'
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-linear-to-b from-black to-blue-900">
 
       {/* Navbar */}
-      <nav className="flex items-center justify-between p-6 border-b">
-        <h1 className="text-2xl font-bold">Rich Stack</h1>
+      <nav className="flex items-center justify-between p-6">
+        <h1 className="text-2xl font-bold text-white">Rich Stack</h1>
 
         <Authenticated>
           <UserButton />
@@ -27,7 +27,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="flex flex-col items-center justify-center text-center flex-1 px-6">
-        <h1 className="text-5xl font-bold mb-4">
+        <h1 className="text-5xl font-bold mb-4 text-[#ebe6da]">
           Build something amazing.
         </h1>
 
@@ -44,7 +44,7 @@ export default function Home() {
         </Unauthenticated>
 
         <Authenticated>
-          <Button size="lg" className="text-lg px-8 py-6">
+          <Button size="lg" className="text-lg px-8 py-6 hover:bg-blue-800">
             Go to App
           </Button>
         </Authenticated>
