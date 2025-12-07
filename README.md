@@ -1,3 +1,41 @@
+# Tech Stack Overview
+
+This project uses a modern, lightweight web development stack:
+
+## 🖥️ Next.js
+
+A React framework for building fast, scalable web applications with
+file‑based routing and server components.
+
+## 🎨 Tailwind CSS
+
+Utility‑first CSS framework for rapid UI styling without writing custom
+CSS.
+
+## 🧩 shadcn/ui
+
+A collection of accessible, customizable UI components built on Tailwind
+and Radix UI.
+
+## 🔐 Clerk
+
+Authentication and user management (sign‑in, sign‑up, sessions, user
+profiles).
+
+## 🗄️ Convex
+
+A real‑time backend platform that handles your database, server
+functions, and syncing automatically.
+
+Together, these tools provide: - Fast UI development\
+- Secure authentication\
+- Real‑time backend logic\
+- Modern, clean design components\
+- Fully type‑safe frontend + backend
+
+# Running
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
