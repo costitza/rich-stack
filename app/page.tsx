@@ -5,6 +5,7 @@ import { SignInButton, UserButton } from '@clerk/nextjs'
 import { useQuery } from 'convex/react'
 import { api } from '../convex/_generated/api'
 import { Button } from '@/components/ui/button'
+import Messages from "../components/Messages";
 
 export default function Home() {
   return (
@@ -44,16 +45,9 @@ export default function Home() {
         </Unauthenticated>
 
         <Authenticated>
-          <Button size="lg" className="text-lg px-8 py-6 hover:bg-blue-800">
-            Go to App
-          </Button>
+          <Messages />
         </Authenticated>
       </main>
     </div>
   );
-}
-
-function Content() {
-  const messages = useQuery(api.messages.getForCurrentUser)
-  return <div>Authenticated content: {messages?.length}</div>
 }
