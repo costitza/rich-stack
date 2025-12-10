@@ -6,8 +6,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button"; // Using shadcn button component
 // import { useQuery } from 'convex/react'
 // import { api } from '../convex/_generated/api'
-import Messages from "../components/Messages";
-import AuthButton from "@/components/auth-button";
 
 export default function Home() {
   const router = useRouter();
@@ -51,10 +49,6 @@ export default function Home() {
             </Button>
           </SignInButton>
         </Unauthenticated>
-
-        <Authenticated>
-          <Messages />
-        </Authenticated>
 
         <SignedIn>
           <Button onClick={handleNavigate} className="bg-blue-600 text-white">
