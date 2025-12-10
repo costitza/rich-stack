@@ -1,13 +1,21 @@
 'use client'
 
 import { Authenticated, Unauthenticated } from 'convex/react'
-import { SignInButton, UserButton } from '@clerk/nextjs'
+import { SignInButton, UserButton, SignedIn, SignedOut } from '@clerk/nextjs'
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button"; // Using shadcn button component
 // import { useQuery } from 'convex/react'
 // import { api } from '../convex/_generated/api'
-import { Button } from '@/components/ui/button'
 import Messages from "../components/Messages";
+import AuthButton from "@/components/auth-button";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push("/chat"); // Navigate to the chatbot page
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-linear-to-b from-black to-blue-900">
 
@@ -47,6 +55,15 @@ export default function Home() {
         <Authenticated>
           <Messages />
         </Authenticated>
+
+        <SignedIn>
+          <Button onClick={handleNavigate} className="bg-blue-600 text-white">
+            Go to Chatbot
+          </Button>
+        </SignedIn>
+        <SignedOut>
+          <p className="text-gray-600">Please sign in to access the chatbot.</p>
+        </SignedOut>
       </main>
     </div>
   );

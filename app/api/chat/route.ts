@@ -1,14 +1,14 @@
 import { openai } from '@ai-sdk/openai';
-import { streamText } from 'ai';
+import { convertToModelMessages, streamText } from 'ai';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
     model: openai('gpt-4o'),
-    messages,
+    messages: convertToModelMessages(messages),
   });
 
   // FALLBACK: If .toDataStreamResponse() fails, use this:
-  return result.toTextStreamResponse(); 
+  return result.toUIMessageStreamResponse(); 
 }
